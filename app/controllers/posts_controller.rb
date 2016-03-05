@@ -9,7 +9,13 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to @post
+    if @post.save
+      flash[:success] = "Great, another picture no one cares about."
+      redirect_to posts_path
+    else
+      flash[:alert] = "WHAT IS THIS WORLD? NO PICTURE?"
+      render 'new'
+    end
   end
 
   def show
