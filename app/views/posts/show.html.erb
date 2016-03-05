@@ -1,2 +1,8 @@
+<div class="text-center edit-links">
 <%= image_tag @post.image.url(:medium) %>
 <%= @post.caption %>
+<div class="text-center edit-links">
+  <%= link_to "Go back to Home Page", posts_path %>
+     |   
+  <%= link_to "Update Post", edit_post_path(@post) %>
+</div>
