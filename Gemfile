@@ -5,7 +5,8 @@ group :test do
   gem 'capybara'
 end
 
-
+gem 'paperclip', '~> 4.2'
+gem 'simple_form', '~> 3.1.0'  
 gem 'factory_girl_rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
