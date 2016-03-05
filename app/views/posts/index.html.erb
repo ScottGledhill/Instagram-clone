@@ -1,1 +1,7 @@
-<%= link_to "New Post", new_post_path %> 
+<%= link_to "New Post", new_post_path %>
+
+<% @posts.each do |post| %>
+  <%= post.image %>
+  <%= post.caption %>
+  <%= image_tag post.image.url(:medium) %>
+<% end %>
