@@ -5,9 +5,9 @@ feature 'Creating posts' do
     visit '/'
     click_link 'New Post'
     attach_file('Image', "/Users/ScottGledhill/Desktop/img/coffee.jpg")
-    fill_in 'Caption', with: '#coffeetime'
+    fill_in 'Caption', with: '#COFFEE'
     click_button 'Create Post'
-    expect(page).to have_content('#coffeetime')
+    expect(page).to have_content('Great, another picture no one cares about')
     expect(page).to have_css("img[src*='coffee.jpg']")
   end
 

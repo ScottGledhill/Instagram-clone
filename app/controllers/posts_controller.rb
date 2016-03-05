@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     if @post.save
       flash[:success] = "Great, another picture no one cares about."
-      redirect_to posts_path
+      redirect_to @post
     else
       flash[:alert] = "WHAT IS THIS WORLD? NO PICTURE?"
       render 'new'
