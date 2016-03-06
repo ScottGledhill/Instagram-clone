@@ -15,11 +15,11 @@ feature 'User authentication' do
     expect(page).to_not have_content('Register')
   end
 
-  scenario 'can log out once logged in' do
-   visit '/'
-   click_link 'Sign up'
-   sign_up
-   click_button 'Logout'
-   expect(page).to have_content('You need to sign in or sign up before continuing.')
- end
+#   scenario 'can log out once logged in' do
+#    visit '/'
+#    click_link 'Sign up'
+#    sign_up
+#    click_button 'Logout'
+#    expect(page).to have_content('You need to sign in or sign up before continuing.')
+#  end
 end
