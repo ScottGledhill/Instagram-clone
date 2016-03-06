@@ -1,11 +1,12 @@
-<div class="text-center edit-links">
-<%= image_tag @post.image.url(:medium) %>
-<%= @post.caption %>
-<div class="text-center edit-links">
-  <% if @post.user.id == current_user.id %>
+<%= render 'post', post: @post %>
+<% if @post.user.id == current_user.id %>
   <div class="text-center edit-links">
-  <%= link_to "Go back to Home Page", posts_path %>
+    <%= link_to "Cancel", posts_path %>
     |
-  <%= link_to "Update Post", edit_post_path(@post) %>
+    <%= link_to "Edit Post", edit_post_path(@post) %>
+  </div>
+<% else %>
+  <div class="text-center edit-links">
+    <%= link_to "Cancel", posts_path %>
   </div>
 <% end %>
