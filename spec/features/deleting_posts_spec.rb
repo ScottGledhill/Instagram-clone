@@ -6,7 +6,7 @@ feature 'Deleting posts' do
     add_pic
     find('[alt="Coffee"]').click
     click_link 'Update Post'
-    click_link 'Delete Post'
+    click_button 'Delete Post'
     expect(page).to have_content('deleted')
     expect(page).to_not have_content('fml')
   end

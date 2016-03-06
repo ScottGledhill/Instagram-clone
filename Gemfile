@@ -5,6 +5,7 @@ group :test do
   gem 'capybara'
 end
 
+gem 'selenium-webdriver'
 gem 'database_cleaner'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'paperclip', '~> 4.2'
