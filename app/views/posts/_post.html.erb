@@ -29,10 +29,6 @@ div class="posts-wrapper">
         <span>(class="glyphicon glyphicon-heart-empty")</span>
       </div>
       <div class="comment-form col-sm-11">
-        <%= form_for [post, post.comments.build] do |f| %>
-          <%= f.text_field :content, placeholder: 'Add a comment...', class: "comment_content", id: "comment_content_#{post.id}" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+        <%= form_for([post, post.comments.build], remote: true) do |f| %>
+      <%= f.text_field :content, placeholder: 'Add a comment...', class: "comment_content", id: "comment_content_#{post.id}" %>
+    <% end %>
