@@ -5,10 +5,12 @@ def create
   @comment.user_id = current_user.id
 
   if @comment.save
-    flash[:success] = "You commented!"
-    redirect_to :back
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
   else
-    flash[:alert] = "DID NOT WORK"
+    flash[:alert] = 'NOPE DID NOT WORK'
     render root_path
   end
 end
@@ -19,7 +21,7 @@ def destroy
   @comment.destroy
   flash[:success] = "Comment deleted :("
   redirect_to root_path
-end  
+end
 
 private
 
