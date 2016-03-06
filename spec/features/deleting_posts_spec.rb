@@ -8,8 +8,9 @@ feature 'Deleting posts' do
   end
 
   scenario 'Can delete a single post' do
+    click_link 'Update Post'
     click_link 'Delete Post'
-    expect(page).to have_content('deleted.')
+    expect(page).to have_content('deleted')
     expect(page).to_not have_content('fml')
   end
 end
