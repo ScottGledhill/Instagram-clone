@@ -1,6 +1,7 @@
 require 'rails_helper'
 
   scenario 'can create a new user via the index page' do
+    visit '/users/sign_up'
     fill_in 'User name', with: 'STARBURST'
     fill_in 'Email', with: '1@2.3.com'
     fill_in 'Password', with: 'password', match: :first
