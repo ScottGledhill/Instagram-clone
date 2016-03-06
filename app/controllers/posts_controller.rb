@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :owned_post, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -34,6 +35,7 @@ class PostsController < ApplicationController
     redirect_to(post_path(@post))
   end
 
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
@@ -42,6 +44,14 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def owned_post
+    @post = Post.find(params[:id])
+    unless current_user == @post.user
+      flash[:alert] = "Must own the post to edit it"
+      redirect_to posts_path
+    end
+  end
 
   def post_params
     params.require(:post).permit(:caption, :image)
