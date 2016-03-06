@@ -33,3 +33,11 @@ def sign_up_no_name
   fill_in 'Password confirmation', with: 'password'
   click_button 'Sign up'
 end
+
+def add_pic_without_sign_up
+  visit '/'
+  click_link 'New Post'
+  attach_file('Image', "/Users/ScottGledhill/Desktop/img/coffee.jpg")
+  fill_in 'Caption', with: '#COFFEE'
+  click_button 'Create Post'
+end
