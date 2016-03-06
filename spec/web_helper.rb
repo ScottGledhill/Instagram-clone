@@ -15,3 +15,20 @@ def sign_up
   fill_in 'Password confirmation', with: 'password'
   click_button 'Sign up'
 end
+
+def sign_up_long_name
+  visit '/users/sign_up'
+  fill_in 'User name', with: 'STARBURSTSTARBURST'
+  fill_in 'Email', with: '1@2.3.com'
+  fill_in 'Password', with: 'password', match: :first
+  fill_in 'Password confirmation', with: 'password'
+  click_button 'Sign up'
+end
+
+def sign_up_no_name
+  visit '/users/sign_up'
+  fill_in 'Email', with: '1@2.3.com'
+  fill_in 'Password', with: 'password', match: :first
+  fill_in 'Password confirmation', with: 'password'
+  click_button 'Sign up'
+end
