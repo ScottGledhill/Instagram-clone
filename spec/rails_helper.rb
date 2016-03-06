@@ -7,6 +7,7 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'web_helper.rb'
 require 'capybara/rails'
+require 'support/database_cleaner'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
