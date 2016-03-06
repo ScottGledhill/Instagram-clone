@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature 'Index displays a list of posts' do
   scenario 'the index displays correct created job information' do
+    sign_up
     create(:post, caption: "This is post one")
     create(:post, caption: "This is the second post")
   visit '/'

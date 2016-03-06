@@ -9,6 +9,7 @@ feature 'Creating posts' do
 
   it 'needs an image to create a post' do
     visit '/'
+    sign_up
     click_link 'New Post'
     fill_in 'Caption', with: "I HATE INSTAGRAM"
     click_button 'Create Post'
