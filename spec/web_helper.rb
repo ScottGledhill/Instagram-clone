@@ -8,5 +8,10 @@ def add_pic
 end
 
 def sign_up
-
+  visit '/users/sign_up'
+  fill_in 'User name', with: 'STARBURST'
+  fill_in 'Email', with: '1@2.3.com'
+  fill_in 'Password', with: 'password', match: :first
+  fill_in 'Password confirmation', with: 'password'
+  click_button 'Sign up'
 end
