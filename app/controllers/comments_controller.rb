@@ -16,19 +16,25 @@ def create
 end
 
 def destroy
-  @comment = @post.comments.find(params[:id])
+  def destroy
+    @comment = @post.comments.find(params[:id])
 
-  @comment.destroy
-  flash[:success] = "Comment deleted :("
-  redirect_to root_path
-end
+    if @comment.user_id == current_user.id
+      @comment.delete
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js
+      end
+    end
+  end
 
 private
 
-def comment_params
-  params.require(:comment).permit(:content)
-end
+  def comment_params
+    params.require(:comment).permit(:content)
+  end
 
-def set_post
-  @post = Post.find(params[:post_id])
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
 end

@@ -1,4 +1,4 @@
-div class="posts-wrapper">
+<div class="posts-wrapper">
   <div class="post">
     <div class="post-head">
       <div class="thumb-img"></div>
@@ -26,7 +26,9 @@ div class="posts-wrapper">
     </div>
     <div class="comment-like-form row">
       <div class="like-button col-sm-1">
-        <span>(class="glyphicon glyphicon-heart-empty")</span>
+        <a href="#">
+        <span class="glyphicon glyphicon-unchecked"></span>
+      </a>
       </div>
       <div class="comment-form col-sm-11">
         <%= form_for([post, post.comments.build], remote: true) do |f| %>
