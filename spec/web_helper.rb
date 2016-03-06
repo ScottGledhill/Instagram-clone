@@ -1,6 +1,7 @@
 
 def add_pic
   visit '/'
+  sign_up
   click_link 'New Post'
   attach_file('Image', "/Users/ScottGledhill/Desktop/img/coffee.jpg")
   fill_in 'Caption', with: '#COFFEE'
