@@ -12,6 +12,7 @@ require 'rails_helper'
     end
 
     scenario 'requires a user name to successfully create an account' do
+      visit '/users/sign_up'
       fill_in 'Email', with: '1@2.3.com'
       fill_in 'Password', with: 'password', match: :first
       fill_in 'Password confirmation', with: 'password'

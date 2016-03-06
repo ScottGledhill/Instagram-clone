@@ -6,3 +6,7 @@ def add_pic
   fill_in 'Caption', with: '#COFFEE'
   click_button 'Create Post'
 end
+
+def sign_up
+
+end
