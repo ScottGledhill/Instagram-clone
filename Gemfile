@@ -5,6 +5,7 @@ group :test do
   gem 'capybara'
 end
 
+gem 'devise'
 gem 'selenium-webdriver'
 gem 'database_cleaner'
 gem 'bootstrap-sass', '~> 3.3.6'
