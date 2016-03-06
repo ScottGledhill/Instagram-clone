@@ -2,7 +2,7 @@ require 'rails_helper'
 
   feature 'User' do
     scenario 'can create a new user via the index page' do
-    sign_up
+      sign_up
       expect(page).to have_content('Welcome to hell..')
     end
 
