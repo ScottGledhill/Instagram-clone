@@ -1,21 +1,21 @@
+class CommentsController < ActionController::Base
 before_action :set_post
 
-def create
-  @comment = @post.comments.build(comment_params)
-  @comment.user_id = current_user.id
+  def create
+    @comment = @post.comments.build(comment_params)
+    @comment.user_id = current_user.id
 
-  if @comment.save
-    respond_to do |format|
-      format.html { redirect_to root_path }
-      format.js
+    if @comment.save
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js
+      end
+    else
+      flash[:alert] = 'NOPE DID NOT WORK'
+      render root_path
     end
-  else
-    flash[:alert] = 'NOPE DID NOT WORK'
-    render root_path
   end
-end
 
-def destroy
   def destroy
     @comment = @post.comments.find(params[:id])
 
