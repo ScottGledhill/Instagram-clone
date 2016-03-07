@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="comment-like-form row">
-      <div class="like-button col-sm-1">
+  <p><%= pluralize post.likes.count, 'LIKE' %></p>
         <a href="#">
         <span class="glyphicon glyphicon-unchecked"></span>
       </a>
