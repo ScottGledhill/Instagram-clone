@@ -24,19 +24,20 @@
           <% end %>
           <div class="comment-like-form row">
             <span class="likes_count"> <%= post.likes.count %> </span> <%= 'likes'.pluralize(post.likes.count) %>
+            <%= link_to "Likes", comment_likes_path(post), method: :post, class: 'likes-link' %>
             <a href="#">
               <span class="glyphicon glyphicon-unchecked"></span>
             </a>
+            <div class="comment-form col-sm-11">
+              <%= form_for([post, post.comments.build], remote: true) do |f| %>
+              <%= f.text_field :content, placeholder: 'Add a comment...', class: "comment_content", id: "comment_content_#{post.id}" %>
+              <div class="user-name">
         </div>
       </div>
     </div>
     <ul>
 </ul>
       </div>
-      <div class="comment-form col-sm-11">
-        <%= form_for([post, post.comments.build], remote: true) do |f| %>
-      <%= f.text_field :content, placeholder: 'Add a comment...', class: "comment_content", id: "comment_content_#{post.id}" %>
-      <div class="user-name">
   <%= post.user.user_name %>
 </div>
 <% end %>
